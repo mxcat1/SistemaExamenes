@@ -8,7 +8,14 @@ USE Sistema_Examenes;
 
 CREATE TABLE Empresa(
     EmpresaCodigo char(10) NOT NULL PRIMARY KEY,
-    EmpresaNombre varchar(100)
+    EmpresaNombre varchar(100),
+    EmpresaPais integer
+);
+CREATE TABLE Contrato(
+  ContratoCodigo char(10) not null primary key ,
+  ContratoEstado bit not null ,
+  ContratoFechaInicio date not null ,
+  ContratoFechaFin date not null
 );
 
 CREATE TABLE Persona(
@@ -20,3 +27,14 @@ CREATE TABLE Persona(
     PersonaPais integer,
     PersonaAutenticacion integer
 );
+
+CREATE TABLE Pais(
+    PaisCodigo integer not null primary key AUTO_INCREMENT,
+    PaisNombre varchar(150)
+);
+
+
+
+ALTER TABLE Empresa
+    ADD CONSTRAINT 'FK_Empresa_Pais'
+        FOREIGN KEY (EmpresaPais) references Pais(PaisCodigo, PaisNombre);
