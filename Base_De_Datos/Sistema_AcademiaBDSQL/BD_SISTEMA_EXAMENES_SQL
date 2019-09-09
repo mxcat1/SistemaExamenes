@@ -1,0 +1,22 @@
+-- BASE DE DATOS SISTEMA EXAMENES ONLINE
+
+CREATE DATABASE Sistema_Examenes;
+
+-- CREACION DE LAS TABLAS PARA AUTENTICACION Y REGISTRO DE USUARIOS
+
+USE Sistema_Examenes;
+
+CREATE TABLE Empresa(
+    EmpresaCodigo char(10) NOT NULL PRIMARY KEY,
+    EmpresaNombre varchar(100)
+);
+
+CREATE TABLE Persona(
+    PersonaCodigo char(10) NOT NULL PRIMARY KEY ,
+    PersonaNombre varchar(150) NOT NULL ,
+    PersonaApellido varchar(150) NOT NULL ,
+    PersonaFechaNacimiento date NOT NULL ,
+    PersonaSexo bit not null ,
+    PersonaPais integer,
+    PersonaAutenticacion integer
+);
