@@ -52,23 +52,23 @@ CREATE TABLE Pais(
 
 
 ALTER TABLE Empresa
-    ADD CONSTRAINT 'FK_Empresa_Pais'
+    ADD CONSTRAINT FK_Empresa_Pais
         FOREIGN KEY (EmpresaPais) references Pais(PaisCodigo);
 ALTER TABLE Contrato
-    ADD CONSTRAINT  'FK_Contrato_Empresa'
+    ADD CONSTRAINT  FK_Contrato_Empresa
         FOREIGN KEY (Empresa) references Empresa(EmpresaCodigo) ;
 ALTER TABLE Autenticacion
-    ADD CONSTRAINT 'FK_Autenticacion_Contrato'
+    ADD CONSTRAINT FK_Autenticacion_Contrato
         FOREIGN KEY (Contrato) REFERENCES Contrato(ContratoCodigo);
 ALTER TABLE Persona
-    ADD CONSTRAINT 'FK_Persona_Pais'
+    ADD CONSTRAINT FK_Persona_Pais
         FOREIGN KEY (PersonaPais) REFERENCES Pais(PaisCodigo);
 ALTER TABLE Persona
-    ADD CONSTRAINT 'FK_Persona_Autenticacion'
+    ADD CONSTRAINT FK_Persona_Autenticacion
         FOREIGN KEY (PersonaAutenticacion) REFERENCES Autenticacion(AutenticacionCodigo);
 ALTER TABLE Docente
-    ADD CONSTRAINT 'FK_Docente_Persona'
+    ADD CONSTRAINT FK_Docente_Persona
         FOREIGN KEY (PersonaDocente) REFERENCES Persona(PersonaCodigo);
 ALTER TABLE Alumno
-    ADD CONSTRAINT 'FK_Alumno_Persona'
+    ADD CONSTRAINT FK_Alumno_Persona
         FOREIGN KEY (PersonaAlumno) REFERENCES Persona(PersonaCodigo);
