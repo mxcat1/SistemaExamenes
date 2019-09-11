@@ -46,6 +46,7 @@ CREATE TABLE Alumno(
 
 CREATE TABLE Pais(
     PaisCodigo integer not null primary key AUTO_INCREMENT,
+    PaisIso CHAR(2) not null ,
     PaisNombre varchar(150)
 );
 
