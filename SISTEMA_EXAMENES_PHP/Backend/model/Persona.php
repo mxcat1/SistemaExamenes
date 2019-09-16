@@ -1,6 +1,6 @@
 <?php
 
-require_once "../config/ConexionBD.php";
+require_once "config/ConexionBD.php";
 
 class Persona extends ConexionBD
 {
