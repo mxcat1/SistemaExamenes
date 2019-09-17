@@ -127,4 +127,10 @@ class Persona extends ConexionBD
     {
         parent::__construct();
     }
+    public function MostrarPersonas(){
+        $resultado=$this->Conexion->query("SELECT * FROM persona");
+
+        return $resultado->fetch_all(MYSQLI_ASSOC);
+
+    }
 }
