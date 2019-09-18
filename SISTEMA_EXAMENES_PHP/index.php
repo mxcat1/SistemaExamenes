@@ -1,6 +1,6 @@
 <?php
 
-require_once "controller/PersonaController.php";
+require_once  'autoload.php';
 
 $persona1=new PersonaController();
 

@@ -2,7 +2,7 @@
 <project version="4">
   <component name="WebServers">
     <option name="servers">
-      <webServer id="27214d1f-9f9a-4152-961c-3ad4c605718c" name="Localhost_Sistema" url="http://localhost">
+      <webServer id="27214d1f-9f9a-4152-961c-3ad4c605718c" name="Localhost_Sistema" url="http://localhost/SISTEMA_EXAMENES_PHP">
         <fileTransfer port="0" mountedRoot="C:\wamp64\www\SISTEMA_EXAMENES_PHP" accessType="MOUNT" />
       </webServer>
     </option>
