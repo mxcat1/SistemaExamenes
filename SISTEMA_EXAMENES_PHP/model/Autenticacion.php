@@ -8,7 +8,7 @@ class Autenticacion extends ConexionBD
     private $_AutenticacionCodigo;
     private $_Contrato;
     private $_AutenticacionNombreUsuario;
-    private $_AutenticacionContraseña;
+    private $_AutenticacionContrasenia;
 
     /**
      * @return mixed
@@ -61,17 +61,17 @@ class Autenticacion extends ConexionBD
     /**
      * @return mixed
      */
-    public function getAutenticacionContraseña()
+    public function getAutenticacionContrasenia()
     {
-        return $this->_AutenticacionContraseña;
+        return $this->_AutenticacionContrasenia;
     }
 
     /**
-     * @param mixed $AutenticacionContraseña
+     * @param mixed $AutenticacionContrasenia
      */
-    public function setAutenticacionContraseña($AutenticacionContraseña): void
+    public function setAutenticacionContrasenia($AutenticacionContrasenia): void
     {
-        $this->_AutenticacionContraseña = $AutenticacionContraseña;
+        $this->_AutenticacionContrasenia = $AutenticacionContrasenia;
     }
 
     public function __construct()
@@ -79,4 +79,21 @@ class Autenticacion extends ConexionBD
         parent::__construct();
     }
 
+    public function Logeo(){
+        $sql="SELECT * FROM autenticacion
+                where AutenticacionNombreUsuario=? and AutenticacionContraseña=?";
+
+        $consu=$this->Conexion->prepare($sql);
+
+        $consu->bind_param('ss',$this->_AutenticacionNombreUsuario,
+            $this->_AutenticacionContrasenia);
+
+        $consu->execute();
+        $dataset=$consu->get_result();
+
+        $result=$dataset->fetch_all(MYSQLI_ASSOC);
+
+        return $result;
+
+    }
 }
