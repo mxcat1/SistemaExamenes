@@ -80,18 +80,19 @@ class Autenticacion extends ConexionBD
     }
 
     public function Logeo(){
-        $sql="SELECT * FROM autenticacion
-                where AutenticacionNombreUsuario=? and AutenticacionContraseña=?";
+        $sql="CALL Logueo(?,?)";
 
         $consu=$this->Conexion->prepare($sql);
 
-        $consu->bind_param('ss',$this->_AutenticacionNombreUsuario,
+        $consu->bind_param('ss',
+            $this->_AutenticacionNombreUsuario,
             $this->_AutenticacionContrasenia);
 
         $consu->execute();
         $dataset=$consu->get_result();
 
         $result=$dataset->fetch_all(MYSQLI_ASSOC);
+        $result[0]['AutenticacionContrasena']=password_hash($result[0]['AutenticacionContrasena'],PASSWORD_BCRYPT, ['cost'=>4]);
 
         return $result;
 
