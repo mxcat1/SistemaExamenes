@@ -92,7 +92,7 @@ class Autenticacion extends ConexionBD
         $dataset=$consu->get_result();
 
         $result=$dataset->fetch_all(MYSQLI_ASSOC);
-        $result[0]['AutenticacionContrasena']=password_hash($result[0]['AutenticacionContrasena'],PASSWORD_BCRYPT, ['cost'=>4]);
+//        $result[0]['AutenticacionContrasena']=password_hash($result[0]['AutenticacionContrasena'],PASSWORD_BCRYPT, ['cost'=>4]);
 
         return $result;
 
