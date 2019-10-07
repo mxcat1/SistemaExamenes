@@ -133,4 +133,25 @@ class Persona extends ConexionBD
         return $resultado->fetch_all(MYSQLI_ASSOC);
 
     }
+    public function RegistrarNuevaPersona(){
+        $sql="INSERT INTO persona(
+                    PersonaCodigo, 
+                    PersonaNombre, 
+                    PersonaApellido, 
+                    PersonaFechaNacimiento, 
+                    PersonaSexo, 
+                    PersonaPais, 
+                    PersonaAutenticacion)
+                values (?,?,?,?,?,?,?)";
+        $consulta=$this->Conexion->prepare($sql);
+        $consulta->bind_param('ssssbii',
+            $this->_PersonaCodigo,
+            $this->_PersonaNombre,
+            $this->_PersonaApellido,
+            $this->_PersonaFechaNacimiento,
+            $this->_PersonaSexo,
+            $this->_PersonaPais,
+            $this->_PersonaAutenticacion);
+        return $consulta->execute();
+    }
 }

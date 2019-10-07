@@ -9,12 +9,19 @@ require_once 'config/parameters.php';
 //
 //$auto11=new AutenticacionController();
 //$auto11->AunteticacionLogeo();
+if (isset($_SESSION["User"])){
+    var_dump($_SESSION["User"]);
+    require_once "view/logount.php";
+}else{
+//    echo "No hay usuario";
+    require_once "view/login.php";
+}
+
 if(isset($_GET['controller'])){
     $nombre_controlador = $_GET['controller'].'Controller';
 
 }elseif(!isset($_GET['controller']) && !isset($_GET['action'])){
     $nombre_controlador = controller_default;
-
 }else{
     echo "Error";
     exit();
@@ -29,16 +36,12 @@ if(class_exists($nombre_controlador)){
     }elseif(!isset($_GET['controller']) && !isset($_GET['action'])){
         $action_default = action_default;
         $controlador->$action_default();
+    }elseif($_GET['action']==''){
+        $action_default = action_default;
+        $controlador->$action_default();
     }else{
-        echo "Error";
+        echo "Error1";
     }
 }else{
-    echo "Error";
-}
-if (isset($_SESSION["User"])){
-    var_dump($_SESSION["User"]);
-    require_once "view/logount.php";
-}else{
-    echo "No hay usuario";
-    require_once "view/login.php";
+    echo "Error2";
 }

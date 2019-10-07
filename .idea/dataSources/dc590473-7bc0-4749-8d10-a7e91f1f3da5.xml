@@ -1330,87 +1330,92 @@
     <table id="338" parent="7" name="empresa"/>
     <table id="339" parent="7" name="pais"/>
     <table id="340" parent="7" name="persona"/>
-    <column id="341" parent="332" name="category_id">
+    <routine id="341" parent="7" name="Logueo">
+      <SourceTextLength>237</SourceTextLength>
+      <Definer>root@localhost</Definer>
+      <RoutineKind>procedure</RoutineKind>
+    </routine>
+    <column id="342" parent="332" name="category_id">
       <Position>1</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="342" parent="332" name="name">
+    <column id="343" parent="332" name="name">
       <Position>2</Position>
       <DataType>varchar(100)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="343" parent="332" name="url_clean">
+    <column id="344" parent="332" name="url_clean">
       <Position>3</Position>
       <DataType>varchar(100)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <key id="344" parent="332" name="PRIMARY">
+    <key id="345" parent="332" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>category_id</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="345" parent="333" name="post_id">
+    <column id="346" parent="333" name="post_id">
       <Position>1</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="346" parent="333" name="title">
+    <column id="347" parent="333" name="title">
       <Position>2</Position>
       <DataType>varchar(255)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="347" parent="333" name="url_clean">
+    <column id="348" parent="333" name="url_clean">
       <Position>3</Position>
       <DataType>varchar(255)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="348" parent="333" name="content">
+    <column id="349" parent="333" name="content">
       <Position>4</Position>
       <DataType>text|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="349" parent="333" name="description">
+    <column id="350" parent="333" name="description">
       <Position>5</Position>
       <DataType>varchar(100)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="350" parent="333" name="created_at">
+    <column id="351" parent="333" name="created_at">
       <Position>6</Position>
       <DataType>timestamp|0s</DataType>
       <DefaultExpression>curtime()</DefaultExpression>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="351" parent="333" name="image">
+    <column id="352" parent="333" name="image">
       <Position>7</Position>
       <DataType>varchar(100)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="352" parent="333" name="posted">
+    <column id="353" parent="333" name="posted">
       <Position>8</Position>
       <DataType>enum(&apos;si&apos;, &apos;no&apos;)|0e</DataType>
       <DefaultExpression>&apos;no&apos;</DefaultExpression>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="353" parent="333" name="category_id">
+    <column id="354" parent="333" name="category_id">
       <Position>9</Position>
       <DataType>int(11)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <index id="354" parent="333" name="posts_categories__fk">
+    <index id="355" parent="333" name="posts_categories__fk">
       <ColNames>category_id</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="355" parent="333" name="PRIMARY">
+    <key id="356" parent="333" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>post_id</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="356" parent="333" name="posts_categories__fk">
+    <foreign-key id="357" parent="333" name="posts_categories__fk">
       <ColNames>category_id</ColNames>
       <RefSchemaName>blogigniter</RefSchemaName>
       <RefTableName>categories</RefTableName>
@@ -1418,268 +1423,276 @@
       <OnUpdate>set-null</OnUpdate>
       <OnDelete>set-null</OnDelete>
     </foreign-key>
-    <column id="357" parent="334" name="AlumnoCodigo">
+    <column id="358" parent="334" name="AlumnoCodigo">
       <Position>1</Position>
       <DataType>char(10)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="358" parent="334" name="PersonaAlumno">
+    <column id="359" parent="334" name="PersonaAlumno">
       <Position>2</Position>
       <DataType>char(10)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <index id="359" parent="334" name="FK_Alumno_Persona">
+    <index id="360" parent="334" name="FK_Alumno_Persona">
       <ColNames>PersonaAlumno</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="360" parent="334" name="PRIMARY">
+    <key id="361" parent="334" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>AlumnoCodigo</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="361" parent="334" name="FK_Alumno_Persona">
+    <foreign-key id="362" parent="334" name="FK_Alumno_Persona">
       <ColNames>PersonaAlumno</ColNames>
       <RefSchemaName>sistema_examenes</RefSchemaName>
       <RefTableName>persona</RefTableName>
       <RefColNames>PersonaCodigo</RefColNames>
     </foreign-key>
-    <column id="362" parent="335" name="AutenticacionCodigo">
+    <column id="363" parent="335" name="AutenticacionCodigo">
       <Position>1</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="363" parent="335" name="Contrato">
+    <column id="364" parent="335" name="Contrato">
       <Position>2</Position>
       <DataType>char(10)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="364" parent="335" name="AutenticacionNombreUsuario">
+    <column id="365" parent="335" name="AutenticacionNombreUsuario">
       <Position>3</Position>
       <DataType>varchar(150)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="365" parent="335" name="AutenticacionContraseña">
+    <column id="366" parent="335" name="AutenticacionContrasena">
       <Position>4</Position>
       <DataType>varchar(150)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <index id="366" parent="335" name="AutenticacionNombreUsuario">
+    <index id="367" parent="335" name="AutenticacionNombreUsuario">
       <ColNames>AutenticacionNombreUsuario</ColNames>
       <Unique>1</Unique>
       <Type>btree</Type>
     </index>
-    <index id="367" parent="335" name="FK_Autenticacion_Contrato">
+    <index id="368" parent="335" name="FK_Autenticacion_Contrato">
       <ColNames>Contrato</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="368" parent="335" name="PRIMARY">
+    <key id="369" parent="335" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>AutenticacionCodigo</ColNames>
       <Primary>1</Primary>
     </key>
-    <key id="369" parent="335" name="AutenticacionNombreUsuario">
+    <key id="370" parent="335" name="AutenticacionNombreUsuario">
       <ColNames>AutenticacionNombreUsuario</ColNames>
       <UnderlyingIndexName>AutenticacionNombreUsuario</UnderlyingIndexName>
     </key>
-    <foreign-key id="370" parent="335" name="FK_Autenticacion_Contrato">
+    <foreign-key id="371" parent="335" name="FK_Autenticacion_Contrato">
       <ColNames>Contrato</ColNames>
       <RefSchemaName>sistema_examenes</RefSchemaName>
       <RefTableName>contrato</RefTableName>
       <RefColNames>ContratoCodigo</RefColNames>
     </foreign-key>
-    <column id="371" parent="336" name="ContratoCodigo">
+    <column id="372" parent="336" name="ContratoCodigo">
       <Position>1</Position>
       <DataType>char(10)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="372" parent="336" name="Empresa">
+    <column id="373" parent="336" name="Empresa">
       <Position>2</Position>
       <DataType>char(10)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="373" parent="336" name="ContratoEstado">
+    <column id="374" parent="336" name="ContratoEstado">
       <Position>3</Position>
       <DataType>bit(1)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="374" parent="336" name="ContratoFechaInicio">
+    <column id="375" parent="336" name="ContratoFechaInicio">
       <Position>4</Position>
       <DataType>date|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="375" parent="336" name="ContratoFechaFin">
+    <column id="376" parent="336" name="ContratoFechaFin">
       <Position>5</Position>
       <DataType>date|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <index id="376" parent="336" name="FK_Contrato_Empresa">
+    <index id="377" parent="336" name="FK_Contrato_Empresa">
       <ColNames>Empresa</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="377" parent="336" name="PRIMARY">
+    <key id="378" parent="336" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>ContratoCodigo</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="378" parent="336" name="FK_Contrato_Empresa">
+    <foreign-key id="379" parent="336" name="FK_Contrato_Empresa">
       <ColNames>Empresa</ColNames>
       <RefSchemaName>sistema_examenes</RefSchemaName>
       <RefTableName>empresa</RefTableName>
       <RefColNames>EmpresaCodigo</RefColNames>
     </foreign-key>
-    <column id="379" parent="337" name="DocenteCodigo">
+    <column id="380" parent="337" name="DocenteCodigo">
       <Position>1</Position>
       <DataType>char(10)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="380" parent="337" name="PersonaDocente">
+    <column id="381" parent="337" name="PersonaDocente">
       <Position>2</Position>
       <DataType>char(10)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <index id="381" parent="337" name="FK_Docente_Persona">
+    <index id="382" parent="337" name="FK_Docente_Persona">
       <ColNames>PersonaDocente</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="382" parent="337" name="PRIMARY">
+    <key id="383" parent="337" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>DocenteCodigo</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="383" parent="337" name="FK_Docente_Persona">
+    <foreign-key id="384" parent="337" name="FK_Docente_Persona">
       <ColNames>PersonaDocente</ColNames>
       <RefSchemaName>sistema_examenes</RefSchemaName>
       <RefTableName>persona</RefTableName>
       <RefColNames>PersonaCodigo</RefColNames>
     </foreign-key>
-    <column id="384" parent="338" name="EmpresaCodigo">
+    <column id="385" parent="338" name="EmpresaCodigo">
       <Position>1</Position>
       <DataType>char(10)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="385" parent="338" name="EmpresaNombre">
+    <column id="386" parent="338" name="EmpresaNombre">
       <Position>2</Position>
       <DataType>varchar(100)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="386" parent="338" name="EmpresaPais">
+    <column id="387" parent="338" name="EmpresaPais">
       <Position>3</Position>
       <DataType>int(11)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <index id="387" parent="338" name="FK_Empresa_Pais">
+    <index id="388" parent="338" name="FK_Empresa_Pais">
       <ColNames>EmpresaPais</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="388" parent="338" name="PRIMARY">
+    <key id="389" parent="338" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>EmpresaCodigo</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="389" parent="338" name="FK_Empresa_Pais">
+    <foreign-key id="390" parent="338" name="FK_Empresa_Pais">
       <ColNames>EmpresaPais</ColNames>
       <RefSchemaName>sistema_examenes</RefSchemaName>
       <RefTableName>pais</RefTableName>
       <RefColNames>PaisCodigo</RefColNames>
     </foreign-key>
-    <column id="390" parent="339" name="PaisCodigo">
+    <column id="391" parent="339" name="PaisCodigo">
       <Position>1</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="391" parent="339" name="PaisIso">
+    <column id="392" parent="339" name="PaisIso">
       <Position>2</Position>
       <DataType>char(2)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="392" parent="339" name="PaisNombre">
+    <column id="393" parent="339" name="PaisNombre">
       <Position>3</Position>
       <DataType>varchar(150)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <key id="393" parent="339" name="PRIMARY">
+    <key id="394" parent="339" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>PaisCodigo</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="394" parent="340" name="PersonaCodigo">
+    <column id="395" parent="340" name="PersonaCodigo">
       <Position>1</Position>
       <DataType>char(10)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="395" parent="340" name="PersonaNombre">
+    <column id="396" parent="340" name="PersonaNombre">
       <Position>2</Position>
       <DataType>varchar(150)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="396" parent="340" name="PersonaApellido">
+    <column id="397" parent="340" name="PersonaApellido">
       <Position>3</Position>
       <DataType>varchar(150)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="397" parent="340" name="PersonaFechaNacimiento">
+    <column id="398" parent="340" name="PersonaFechaNacimiento">
       <Position>4</Position>
       <DataType>date|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="398" parent="340" name="PersonaSexo">
+    <column id="399" parent="340" name="PersonaSexo">
       <Position>5</Position>
       <DataType>bit(1)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="399" parent="340" name="PersonaPais">
+    <column id="400" parent="340" name="PersonaPais">
       <Position>6</Position>
       <DataType>int(11)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="400" parent="340" name="PersonaAutenticacion">
+    <column id="401" parent="340" name="PersonaAutenticacion">
       <Position>7</Position>
       <DataType>int(11)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <index id="401" parent="340" name="FK_Persona_Pais">
+    <index id="402" parent="340" name="FK_Persona_Pais">
       <ColNames>PersonaPais</ColNames>
       <Type>btree</Type>
     </index>
-    <index id="402" parent="340" name="FK_Persona_Autenticacion">
+    <index id="403" parent="340" name="FK_Persona_Autenticacion">
       <ColNames>PersonaAutenticacion</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="403" parent="340" name="PRIMARY">
+    <key id="404" parent="340" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>PersonaCodigo</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="404" parent="340" name="FK_Persona_Pais">
+    <foreign-key id="405" parent="340" name="FK_Persona_Pais">
       <ColNames>PersonaPais</ColNames>
       <RefSchemaName>sistema_examenes</RefSchemaName>
       <RefTableName>pais</RefTableName>
       <RefColNames>PaisCodigo</RefColNames>
     </foreign-key>
-    <foreign-key id="405" parent="340" name="FK_Persona_Autenticacion">
+    <foreign-key id="406" parent="340" name="FK_Persona_Autenticacion">
       <ColNames>PersonaAutenticacion</ColNames>
       <RefSchemaName>sistema_examenes</RefSchemaName>
       <RefTableName>autenticacion</RefTableName>
       <RefColNames>AutenticacionCodigo</RefColNames>
     </foreign-key>
+    <argument id="407" parent="341" name="NombreUsuario">
+      <Position>1</Position>
+      <DataType>varchar(200)|0s</DataType>
+    </argument>
+    <argument id="408" parent="341" name="Contrasenia">
+      <Position>2</Position>
+      <DataType>varchar(200)|0s</DataType>
+    </argument>
   </database-model>
 </dataSource>
