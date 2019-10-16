@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="0014fe49-543b-41b2-8f32-065ea39b4090" name="localhost" url="http://localhost\Sistema_Examenes_PHP">
+        <fileTransfer port="0" mountedRoot="C:\wamp64\www\Sistema_Examenes_PHP" accessType="MOUNT" />
+      </webServer>
+    </option>
+  </component>
+</project>
