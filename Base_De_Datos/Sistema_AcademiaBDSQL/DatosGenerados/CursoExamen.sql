@@ -1,0 +1,10 @@
+insert into CursoExamen (idCursoExamen, CursoExamen) values (1, 'Javascript');
+insert into CursoExamen (idCursoExamen, CursoExamen) values (2, 'Programacion orientada objetos');
+insert into CursoExamen (idCursoExamen, CursoExamen) values (3, 'Seguridad del Paciente');
+insert into CursoExamen (idCursoExamen, CursoExamen) values (4, 'Pensamiento Científico');
+insert into CursoExamen (idCursoExamen, CursoExamen) values (5, 'Analizando las Políticas Económicas');
+insert into CursoExamen (idCursoExamen, CursoExamen) values (6, 'Introducción a la Contabilidad Financiera');
+insert into CursoExamen (idCursoExamen, CursoExamen) values (7, 'Interpretación');
+insert into CursoExamen (idCursoExamen, CursoExamen) values (8, 'aplicación e integración del Derecho');
+insert into CursoExamen (idCursoExamen, CursoExamen) values (9, 'Swift: programar para iOS');
+insert into CursoExamen (idCursoExamen, CursoExamen) values (10, 'Gestión de proyectos');
