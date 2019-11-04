@@ -138,7 +138,7 @@ CREATE TABLE PlantillaExamenOpcion
     idPlatillaExamenOpcion    char(10) not null,
     PlatillaExamenCabeceraPEO char(10) not null,
     PlatillaExamenPregunta    char(10) not null,
-    OpcionDescripcion         text     not null,
+    OpcionDescripcion         text     null,
 
     constraint PK_PlantillaExamenOpcion PRIMARY KEY (idPlatillaExamenOpcion, PlatillaExamenCabeceraPEO,
                                                      PlatillaExamenPregunta),

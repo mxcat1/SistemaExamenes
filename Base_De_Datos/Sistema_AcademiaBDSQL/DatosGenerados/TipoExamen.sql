@@ -3,3 +3,8 @@ insert into TipoExamen (idTipoExamen, TipoExamen) values (2, 'Biologia');
 insert into TipoExamen (idTipoExamen, TipoExamen) values (3, 'ciencias');
 insert into TipoExamen (idTipoExamen, TipoExamen) values (4, 'sociales');
 insert into TipoExamen (idTipoExamen, TipoExamen) values (5, 'literatura');
+insert into TipoExamen (idTipoExamen, TipoExamen) values (6, 'Programacion');
+insert into TipoExamen (idTipoExamen, TipoExamen) values (7, 'Biologia');
+insert into TipoExamen (idTipoExamen, TipoExamen) values (8, 'ciencias');
+insert into TipoExamen (idTipoExamen, TipoExamen) values (9, 'sociales');
+insert into TipoExamen (idTipoExamen, TipoExamen) values (10, 'literatura');
