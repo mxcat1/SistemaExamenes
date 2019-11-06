@@ -122,7 +122,7 @@ CREATE TABLE PlantillaExamenPregunta
     PlantillaExamenCabeceraPEP CHAR(10) not null,
     TemaPregunta               integer,
     PreguntaTexto              text     not null,
-    OpcionCorrecta             char(10) not null,
+    OpcionCorrecta             char(10) null,
 
     constraint PK_PlantillaExamenPregunta PRIMARY KEY (idPlantillaExamenPregunta, PlantillaExamenCabeceraPEP),
 

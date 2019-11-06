@@ -1,0 +1,10 @@
+INSERT INTO sistema_examenes.tipoexamen (idTipoExamen, TipoExamen) VALUES (1, 'Programacion');
+INSERT INTO sistema_examenes.tipoexamen (idTipoExamen, TipoExamen) VALUES (2, 'Biologia');
+INSERT INTO sistema_examenes.tipoexamen (idTipoExamen, TipoExamen) VALUES (3, 'ciencias');
+INSERT INTO sistema_examenes.tipoexamen (idTipoExamen, TipoExamen) VALUES (4, 'sociales');
+INSERT INTO sistema_examenes.tipoexamen (idTipoExamen, TipoExamen) VALUES (5, 'literatura');
+INSERT INTO sistema_examenes.tipoexamen (idTipoExamen, TipoExamen) VALUES (6, 'Programacion');
+INSERT INTO sistema_examenes.tipoexamen (idTipoExamen, TipoExamen) VALUES (7, 'Biologia');
+INSERT INTO sistema_examenes.tipoexamen (idTipoExamen, TipoExamen) VALUES (8, 'ciencias');
+INSERT INTO sistema_examenes.tipoexamen (idTipoExamen, TipoExamen) VALUES (9, 'sociales');
+INSERT INTO sistema_examenes.tipoexamen (idTipoExamen, TipoExamen) VALUES (10, 'literatura');
