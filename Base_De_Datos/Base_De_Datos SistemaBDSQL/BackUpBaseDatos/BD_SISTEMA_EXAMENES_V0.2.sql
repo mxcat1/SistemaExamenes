@@ -168,17 +168,18 @@ CREATE TABLE AlumnoRespuestaCabecera
 
 CREATE TABLE AlumnoRespuesta
 (
+    idAlumnoRespuesta integer not null auto_increment primary key ,
     PlantillaExamenCabeceraAR    char(10) not null,
     AlumnoAR                     char(10) not null,
     PlantillaExamenPreguntaAR    char(10) not null,
     PlantillaExamenCabeceraARPEP char(10),
     OpcionMarcada                char(10),
 
-    constraint PK_AlumnoRespuesta
-        PRIMARY KEY (PlantillaExamenCabeceraAR, AlumnoAR, PlantillaExamenPreguntaAR),
+--    constraint PK_AlumnoRespuesta
+--        PRIMARY KEY (PlantillaExamenCabeceraAR, AlumnoAR, PlantillaExamenPreguntaAR),
 
     constraint FK_AlmunoRespuesta_AlumnoRespuestaCabecera
-        foreign key (PlantillaExamenPreguntaAR, AlumnoAR)
+        foreign key (PlantillaExamenCabeceraAR, AlumnoAR)
             references AlumnoRespuestaCabecera (PlantillaExamenCabecera, Alumno),
     constraint FK_AlmunoRespuesta_PlantillaExamenPregunta
         foreign key (PlantillaExamenPreguntaAR, PlantillaExamenCabeceraARPEP)
