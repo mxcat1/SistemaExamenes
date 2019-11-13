@@ -48,6 +48,7 @@ CREATE TABLE Persona
     PersonaCodigo          char(10)     NOT NULL PRIMARY KEY,
     PersonaNombre          varchar(150) NOT NULL,
     PersonaApellido        varchar(150) NOT NULL,
+    PersonaCorreo          varchar(400) NOT NULL,
     PersonaFechaNacimiento date         NOT NULL,
     PersonaSexo            bit          not null,
     PersonaPais            integer,

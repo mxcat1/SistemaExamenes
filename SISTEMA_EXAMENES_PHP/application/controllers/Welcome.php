@@ -22,11 +22,15 @@ class Welcome extends CI_Controller {
 	{
 		parent::__construct();
 		$this->load->model("Welcome_model");
+		$this->load->helper('url_helper');
+		$this->load->helper('form_helper');
 	}
 
 	public function index()
 	{
 		$this->load->view('welcome_message');
 		var_dump($this->Welcome_model->datos());
+//		echo base_url();
+//		echo form_open();
 	}
 }
