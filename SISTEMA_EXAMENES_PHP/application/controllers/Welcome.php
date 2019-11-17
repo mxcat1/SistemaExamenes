@@ -1,4 +1,7 @@
 <?php
+
+use Fcosrno\Exam\Exam;
+
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Welcome extends CI_Controller {
@@ -24,6 +27,7 @@ class Welcome extends CI_Controller {
 		$this->load->model("Welcome_model");
 		$this->load->helper('url_helper');
 		$this->load->helper('form_helper');
+
 	}
 
 	public function index()
@@ -32,5 +36,29 @@ class Welcome extends CI_Controller {
 		var_dump($this->Welcome_model->datos());
 //		echo base_url();
 //		echo form_open();
+	}
+	public function pruebaexam()
+	{
+		echo form_open();
+		$nuevo=new Fcosrno\Exam\Exam();
+		$nuevo->ask('hola')->setChoices('1','2','3')->setAnswer('2');
+		$nuevo->ask('hola')->setChoices('1','2','3')->setAnswer('2');
+		$nuevo->ask('hola')->setChoices('1','2','3')->setAnswer('2');
+		$vista=$nuevo->generateHtml();
+		echo $vista;
+
+
+		echo form_submit('enviar','enviar');
+		if(!empty($_POST)){
+			$mire=array_values($_POST);
+			$per=$nuevo->grade($mire);
+			echo $per->asPercentage();
+			echo '<br>';
+			echo $per->asFraction();
+			$_POST=null;
+		}
+	}
+	public function hola(){
+		echo "Hola";
 	}
 }
