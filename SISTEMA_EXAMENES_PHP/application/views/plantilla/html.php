@@ -11,15 +11,4 @@
 	<title>Sisteam Examenes</title>
 </head>
 <body>
-<?php
-    $this->load->view("plantilla/header");
-?>
-<?php
-	$this->load->view("plantilla/footer");
-?>
 
-<script src="<?php echo base_url(); ?>assets/js/jquery.min.js"></script>
-<script src="<?php echo base_url(); ?>assets/js/popper.js"></script>
-<script src="<?php echo base_url(); ?>assets/js/bootstrap.min.js"></script>
-</body>
-</html>
