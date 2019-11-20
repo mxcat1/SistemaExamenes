@@ -72,5 +72,29 @@ class CI_Model {
 		//	most likely a typo in your model code.
 		return get_instance()->$key;
 	}
-
+	function mostrarTodos($tabla){
+		$this->db->select();
+		$this->db->from($tabla);
+		$datos=$this->db->get();
+		return $datos->result();
+	}
+	function mostrarUno($tabla,$tabla_id,$id){
+		$this->db->select();
+		$this->db->from($tabla);
+		$this->db->where($tabla_id,$id);
+		$datos=$this->db->get();
+		return $datos->row();
+	}
+	function actualizar($tabla,$tabla_id,$id){
+		$this->db->where($tabla_id,$id);
+		$this->db->update($tabla);
+	}
+	function eliminar($tabla,$tabla_id,$id){
+		$this->db->where($tabla_id,$id);
+		$this->db->$this->db->delete('Table');($tabla);
+	}
+	function insertar($tabla,$data){
+		$this->db->insert($tabla,$data);
+		return $this->db->insert_id();
+	}
 }
