@@ -1,7 +1,7 @@
 <?php
 
 
-class Index extends CI_Controller
+class autenticacion extends CI_Controller
 {
 
 	public function __construct()
@@ -11,10 +11,9 @@ class Index extends CI_Controller
 		$this->load->helper('form');
 		$this->load->library('parser');
 	}
-	public function index(){
-		$this->load->view('index/inicio');
+	public function login(){
+		$this->load->view('autenticacion/login');
 	}
-	public function contacto(){
-		$this->load->view('index/contacto');
-	}
+
+
 }
