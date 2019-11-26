@@ -14,8 +14,8 @@
 			</ul>
 		</div>
 		<div class="justify-content-end">
-			<a href="<?=base_url()?>autenticacion/login" class="navbar-brand">Inicio de Sesion</a>
-			<button class="btn btn-primary"><a href="<?=base_url()?>registro/registrarse" class="align-content-center "><span class="text-white">Registro</span></a></button>
+			<a href="<?=base_url()?>autenticacion/loginVista" class="navbar-brand">Inicio de Sesion</a>
+			<a href="<?=base_url()?>registro/registroVista" class="align-content-center "><button class="btn btn-primary"><span class="text-white">Registro</span></button></a>
 		</div>
 	</nav>
 </header>

@@ -61,7 +61,7 @@
 							dolorem eaque, eos, facilis hic illo laudantium nulla repellendus,
 							repudiandae voluptas!</p>
 						<div class="d-flex justify-content-center">
-							<a href="#" class="btn btn-primary">Registrarse</a>
+							<a href="<?php echo base_url(); ?>registro/registroVista" class="btn btn-primary">Registrarse</a>
 						</div>
 					</div>
 				</div>

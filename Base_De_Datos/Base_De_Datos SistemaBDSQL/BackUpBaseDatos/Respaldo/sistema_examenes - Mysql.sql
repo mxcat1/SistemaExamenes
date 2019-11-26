@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1:3307
--- Tiempo de generación: 13-11-2019 a las 02:53:51
+-- Tiempo de generación: 26-11-2019 a las 01:17:55
 -- Versión del servidor: 10.3.14-MariaDB
 -- Versión de PHP: 7.2.18
 
@@ -42,9 +42,28 @@ DELIMITER ;
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `alumno`
+-- Estructura de tabla para la tabla `administrador`
 --
--- Creación: 13-11-2019 a las 02:49:58
+
+DROP TABLE IF EXISTS `administrador`;
+CREATE TABLE IF NOT EXISTS `administrador` (
+                                               `AdministradorCodigo` char(5) NOT NULL,
+                                               `PersonaAdministrador` char(10) NOT NULL,
+                                               PRIMARY KEY (`AdministradorCodigo`),
+                                               UNIQUE KEY `Administrador_PersonaAdministrador_uindex` (`PersonaAdministrador`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Volcado de datos para la tabla `administrador`
+--
+
+INSERT INTO `administrador` (`AdministradorCodigo`, `PersonaAdministrador`) VALUES
+('10000', '9992075739');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `alumno`
 --
 
 DROP TABLE IF EXISTS `alumno`;
@@ -566,8 +585,6 @@ INSERT INTO `alumno` (`AlumnoCodigo`, `PersonaAlumno`) VALUES
 --
 -- Estructura de tabla para la tabla `alumnorespuesta`
 --
--- Creación: 13-11-2019 a las 02:49:58
---
 
 DROP TABLE IF EXISTS `alumnorespuesta`;
 CREATE TABLE IF NOT EXISTS `alumnorespuesta` (
@@ -694,8 +711,6 @@ INSERT INTO `alumnorespuesta` (`idAlumnoRespuesta`, `PlantillaExamenCabeceraAR`,
 --
 -- Estructura de tabla para la tabla `alumnorespuestacabecera`
 --
--- Creación: 13-11-2019 a las 02:49:58
---
 
 DROP TABLE IF EXISTS `alumnorespuestacabecera`;
 CREATE TABLE IF NOT EXISTS `alumnorespuestacabecera` (
@@ -818,8 +833,6 @@ INSERT INTO `alumnorespuestacabecera` (`PlantillaExamenCabecera`, `Alumno`, `Fec
 --
 -- Estructura de tabla para la tabla `autenticacion`
 --
--- Creación: 13-11-2019 a las 02:49:58
---
 
 DROP TABLE IF EXISTS `autenticacion`;
 CREATE TABLE IF NOT EXISTS `autenticacion` (
@@ -830,7 +843,7 @@ CREATE TABLE IF NOT EXISTS `autenticacion` (
                                                PRIMARY KEY (`AutenticacionCodigo`),
                                                UNIQUE KEY `AutenticacionNombreUsuario` (`AutenticacionNombreUsuario`),
                                                KEY `FK_Autenticacion_Contrato` (`Contrato`)
-) ENGINE=InnoDB AUTO_INCREMENT=1001 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=1003 DEFAULT CHARSET=latin1;
 
 --
 -- Volcado de datos para la tabla `autenticacion`
@@ -1836,14 +1849,13 @@ INSERT INTO `autenticacion` (`AutenticacionCodigo`, `Contrato`, `AutenticacionNo
 (997, '0226-NOU29', 'dbeesonro', 'sNU35Z'),
 (998, '7347-ZKJ58', 'jdorranrp', 'IGWex8wkH'),
 (999, '5919-BIK83', 'darmfirldrq', 'SZTBsbU9'),
-(1000, '8270-JQR15', 'aridewoodrr', 'rNssS4zAyZt');
+(1000, '8270-JQR15', 'aridewoodrr', 'rNssS4zAyZt'),
+(1002, NULL, 'admin', 'admin');
 
 -- --------------------------------------------------------
 
 --
 -- Estructura de tabla para la tabla `contrato`
---
--- Creación: 13-11-2019 a las 02:49:58
 --
 
 DROP TABLE IF EXISTS `contrato`;
@@ -2869,9 +2881,6 @@ INSERT INTO `contrato` (`ContratoCodigo`, `Empresa`, `ContratoEstado`, `Contrato
 --
 -- Estructura de tabla para la tabla `cursoexamen`
 --
--- Creación: 13-11-2019 a las 02:49:58
--- Última actualización: 13-11-2019 a las 02:49:58
---
 
 DROP TABLE IF EXISTS `cursoexamen`;
 CREATE TABLE IF NOT EXISTS `cursoexamen` (
@@ -2900,8 +2909,6 @@ INSERT INTO `cursoexamen` (`idCursoExamen`, `CursoExamen`) VALUES
 
 --
 -- Estructura de tabla para la tabla `docente`
---
--- Creación: 13-11-2019 a las 02:49:58
 --
 
 DROP TABLE IF EXISTS `docente`;
@@ -3422,8 +3429,6 @@ INSERT INTO `docente` (`DocenteCodigo`, `PersonaDocente`) VALUES
 
 --
 -- Estructura de tabla para la tabla `empresa`
---
--- Creación: 13-11-2019 a las 02:49:58
 --
 
 DROP TABLE IF EXISTS `empresa`;
@@ -4446,9 +4451,6 @@ INSERT INTO `empresa` (`EmpresaCodigo`, `EmpresaNombre`, `EmpresaPais`) VALUES
 --
 -- Estructura de tabla para la tabla `pais`
 --
--- Creación: 13-11-2019 a las 02:49:58
--- Última actualización: 13-11-2019 a las 02:49:58
---
 
 DROP TABLE IF EXISTS `pais`;
 CREATE TABLE IF NOT EXISTS `pais` (
@@ -4708,9 +4710,6 @@ INSERT INTO `pais` (`PaisCodigo`, `PaisIso`, `PaisNombre`) VALUES
 
 --
 -- Estructura de tabla para la tabla `persona`
---
--- Creación: 13-11-2019 a las 02:51:25
--- Última actualización: 13-11-2019 a las 02:52:34
 --
 
 DROP TABLE IF EXISTS `persona`;
@@ -5733,14 +5732,13 @@ INSERT INTO `persona` (`PersonaCodigo`, `PersonaNombre`, `PersonaApellido`, `Per
 ('9965491607', 'North', 'Winterton', 'bgummoero@merriam-webster.com', b'1', 229, 623, '2004-11-29'),
 ('9978723191', 'Diann', 'Raper', 'kcluerrp@yandex.ru', b'0', 2, 507, '2017-11-04'),
 ('9991757482', 'Marcelline', 'Pinney', 'jdevriesrq@chicagotribune.com', b'1', 62, 175, '2004-04-30'),
-('9992075738', 'Yelena', 'Copes', 'cchilderr@tinypic.com', b'0', 133, 153, '2014-03-04');
+('9992075738', 'Yelena', 'Copes', 'cchilderr@tinypic.com', b'0', 133, 153, '2014-03-04'),
+('9992075739', 'Pablo', 'Yerena', 'pabloyerena@gmail.com', b'0', 2, 1002, '1996-12-01');
 
 -- --------------------------------------------------------
 
 --
 -- Estructura de tabla para la tabla `plantillaexamencabecera`
---
--- Creación: 13-11-2019 a las 02:49:58
 --
 
 DROP TABLE IF EXISTS `plantillaexamencabecera`;
@@ -5866,8 +5864,6 @@ INSERT INTO `plantillaexamencabecera` (`idPlantillaExamenCabecera`, `Docente`, `
 
 --
 -- Estructura de tabla para la tabla `plantillaexamenopcion`
---
--- Creación: 13-11-2019 a las 02:49:58
 --
 
 DROP TABLE IF EXISTS `plantillaexamenopcion`;
@@ -6391,8 +6387,6 @@ INSERT INTO `plantillaexamenopcion` (`idPlatillaExamenOpcion`, `PlatillaExamenCa
 --
 -- Estructura de tabla para la tabla `plantillaexamenpregunta`
 --
--- Creación: 13-11-2019 a las 02:49:58
---
 
 DROP TABLE IF EXISTS `plantillaexamenpregunta`;
 CREATE TABLE IF NOT EXISTS `plantillaexamenpregunta` (
@@ -6517,9 +6511,6 @@ INSERT INTO `plantillaexamenpregunta` (`idPlantillaExamenPregunta`, `PlantillaEx
 --
 -- Estructura de tabla para la tabla `temaexamenpregunta`
 --
--- Creación: 13-11-2019 a las 02:49:58
--- Última actualización: 13-11-2019 a las 02:49:58
---
 
 DROP TABLE IF EXISTS `temaexamenpregunta`;
 CREATE TABLE IF NOT EXISTS `temaexamenpregunta` (
@@ -6549,9 +6540,6 @@ INSERT INTO `temaexamenpregunta` (`idTemaExamenPregunta`, `TemaPregunta`) VALUES
 --
 -- Estructura de tabla para la tabla `tipoexamen`
 --
--- Creación: 13-11-2019 a las 02:49:58
--- Última actualización: 13-11-2019 a las 02:49:58
---
 
 DROP TABLE IF EXISTS `tipoexamen`;
 CREATE TABLE IF NOT EXISTS `tipoexamen` (
@@ -6579,6 +6567,12 @@ INSERT INTO `tipoexamen` (`idTipoExamen`, `TipoExamen`) VALUES
 --
 -- Restricciones para tablas volcadas
 --
+
+--
+-- Filtros para la tabla `administrador`
+--
+ALTER TABLE `administrador`
+    ADD CONSTRAINT `FK_Administrador_Persona` FOREIGN KEY (`PersonaAdministrador`) REFERENCES `persona` (`PersonaCodigo`);
 
 --
 -- Filtros para la tabla `alumno`

@@ -76,7 +76,14 @@ CREATE TABLE Alumno
     CONSTRAINT FK_Alumno_Persona
         FOREIGN KEY (PersonaAlumno) REFERENCES Persona (PersonaCodigo)
 );
+CREATE TABLE Administrador
+(
+    AdministradorCodigo  char(5) not null primary key,
+    PersonaAdministrador char(10),
 
+    CONSTRAINT FK_Administrador_Persona
+        FOREIGN KEY (PersonaAdministrador) REFERENCES Persona (PersonaCodigo)
+);
 
 # END CREACION DE LAS TABLAS PARA AUTENTICACION Y REGISTRO DE USUARIOS
 

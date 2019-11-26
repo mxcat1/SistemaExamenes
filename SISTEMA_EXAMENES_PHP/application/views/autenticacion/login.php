@@ -4,6 +4,7 @@ $this->load->view('plantilla/header');
 ?>
 <main class="contenido p-5">
 	<div class="container">
+		<h3 class="text-center">Alumnos</h3>
 		<div class="row">
 			<div class="col-sm-12 d-flex justify-content-center p-3">
 				<img src="<?=base_url()?>assets/img/img-fake.png" alt="" width="100" height="100">

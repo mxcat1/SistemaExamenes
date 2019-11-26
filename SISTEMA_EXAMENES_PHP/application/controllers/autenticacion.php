@@ -11,8 +11,11 @@ class autenticacion extends CI_Controller
 		$this->load->helper('form');
 		$this->load->library('parser');
 	}
-	public function login(){
+	public function loginVista(){
 		$this->load->view('autenticacion/login');
+	}
+	public function loginAdmin(){
+		$this->load->view('autenticacion/loginAdmin');
 	}
 
 
