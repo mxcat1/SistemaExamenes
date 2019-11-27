@@ -8,6 +8,11 @@ $this->load->view('plantilla/header');
 			<h3 class="text-size-50">Registro Alumnos</h3>
 		</div>
 	</div>
+	<div class="row">
+		<div class="col-sm-12 d-flex justify-content-center">
+			{errors}
+		</div>
+	</div>
 	<?php
 	    echo form_open('registro/nuevoRegistro');
 	?>
@@ -179,13 +184,12 @@ $this->load->view('plantilla/header');
 			</div>
 			<div class="row ml-5">
 				<div class="form-group col-sm-6">
-					<select class="form-control w-75" id="cbpais" required>
-						<option>Pais</option>
-						<?php
-							foreach ($paices as $item) {
-								echo "<option value='{$item->PaisCodigo}'>{$item->PaisNombre}</option>";
-							}
-						?>
+					<select class="form-control w-75" name="cbpais" id="cbpais" >
+						<option value="">Pais</option>
+
+						{paices}
+						<option value="{PaisCodigo}">{PaisNombre}</option>
+						{/paices}
 					</select>
 				</div>
 				<div class="form-group col-sm-6 ">
@@ -195,7 +199,21 @@ $this->load->view('plantilla/header');
 					    	'class'=>'btn btn-success w-50 ml-5',
 							'id'=>'btnregistrar'
 						);
-					    echo form_button('btnregistrar','Registrarse',$btnsubmit);
+					    echo form_submit('btnregistrar','Registrarse',$btnsubmit);
+					?>
+				</div>
+			</div>
+			<div class="row ml-5">
+				<div class="form-group col-sm-6">
+					<?php
+					$correo=array(
+						'type'=>'email',
+						'class' => 'form-control w-75',
+						'name' => 'txtcorreo',
+						'id' => 'txtcorreo',
+						'placeholder' => 'Correo Electrónico'
+					);
+					echo form_input($correo);
 					?>
 				</div>
 			</div>

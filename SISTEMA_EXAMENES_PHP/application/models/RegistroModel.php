@@ -6,7 +6,7 @@ class RegistroModel extends CI_Model
 	public function __construct()
 	{
 		parent::__construct();
-		$this->load->database();
+//		$this->load->database();
 	}
 	public function paices(){
 		$this->db->select('PaisCodigo,PaisNombre');
@@ -14,5 +14,6 @@ class RegistroModel extends CI_Model
 		$data=$this->db->get();
 		return $data->result();
 	}
+
 
 }
