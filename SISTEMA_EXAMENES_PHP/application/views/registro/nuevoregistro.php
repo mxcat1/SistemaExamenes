@@ -8,11 +8,6 @@ $this->load->view('plantilla/header');
 			<h3 class="text-size-50">Registro Alumnos</h3>
 		</div>
 	</div>
-	<div class="row">
-		<div class="col-sm-12 d-flex justify-content-center">
-			{errors}
-		</div>
-	</div>
 	<?php
 	    echo form_open('registro/nuevoRegistro');
 	?>
@@ -29,7 +24,7 @@ $this->load->view('plantilla/header');
 					);
 					echo form_input($inputdni);
 					?>
-
+					<?php echo form_error('txtdni'); ?>
 				</div>
 				<div class="form-group col-sm-6 ">
 					<h5>Contrato</h5>
@@ -74,7 +69,7 @@ $this->load->view('plantilla/header');
 					);
 					echo form_input($txtnom);
 					?>
-
+					<?php echo form_error('txtnombre'); ?>
 				</div>
 				<div class="form-group col-sm-6">
 					<?php
@@ -101,6 +96,7 @@ $this->load->view('plantilla/header');
 					);
 					echo form_input($txtape);
 					?>
+					<?php echo form_error('txtapellido'); ?>
 				</div>
 				<div class="form-group col-sm-6">
 					<?php
@@ -113,6 +109,7 @@ $this->load->view('plantilla/header');
 					);
 					echo form_input($txtnomusu);
 					?>
+					<?php echo form_error('txtnomusuario'); ?>
 				</div>
 			</div>
 			<div class="row ml-5">
@@ -127,6 +124,7 @@ $this->load->view('plantilla/header');
 					);
 					echo form_input($dtfenac);
 					?>
+					<?php echo form_error('dtfenac'); ?>
 				</div>
 				<div class="form-group col-sm-6">
 					<?php
@@ -138,6 +136,7 @@ $this->load->view('plantilla/header');
 					);
 					echo form_password($pass);
 					?>
+					<?php echo form_error('txtpass'); ?>
 				</div>
 			</div>
 			<div class="row ml-5">
@@ -169,6 +168,7 @@ $this->load->view('plantilla/header');
 							?>
 						</div>
 					</div>
+					<?php echo form_error('grbsexo'); ?>
 				</div>
 				<div class="form-group col-sm-6">
 					<?php
@@ -180,6 +180,7 @@ $this->load->view('plantilla/header');
 					);
 					echo form_password($veripass);
 					?>
+					<?php echo form_error('txtveripass'); ?>
 				</div>
 			</div>
 			<div class="row ml-5">
@@ -191,7 +192,9 @@ $this->load->view('plantilla/header');
 						<option value="{PaisCodigo}">{PaisNombre}</option>
 						{/paices}
 					</select>
+					<?php echo form_error('cbpais'); ?>
 				</div>
+
 				<div class="form-group col-sm-6 ">
 					<?php
 					    $btnsubmit=array(
@@ -215,6 +218,7 @@ $this->load->view('plantilla/header');
 					);
 					echo form_input($correo);
 					?>
+					<?php echo form_error('txtcorreo'); ?>
 				</div>
 			</div>
 
