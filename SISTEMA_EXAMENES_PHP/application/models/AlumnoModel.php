@@ -10,6 +10,10 @@ class AlumnoModel extends CI_Model
 	{
 		parent::__construct();
 		$this->load->model('PersonaModel');
+		$this->load->model('AuntenticacionModel');
+	}
+	public function RegistrarAlumno($datosalum){
+		return $this->db->insert($this->table,$datosalum);
 	}
 
 

@@ -11,8 +11,7 @@ class PersonaModel extends CI_Model
 	}
 
 	public function RegistrarPersona($datospersona){
-		$this->db->insert($this->table,$datospersona);
-		return $this->db->insert_id();
+		return $this->db->insert($this->table,$datospersona);
 	}
 
 }
