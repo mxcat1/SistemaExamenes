@@ -8,7 +8,7 @@
 	<link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/bootstrap.min.css">
 	<link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/app.css">
 	<link rel="stylesheet" href="<?php echo base_url(); ?>assets/fontawesone/all.css">
-	<title>Sisteam Examenes</title>
+	<title>Sistema Examenes</title>
 </head>
 <body>
 

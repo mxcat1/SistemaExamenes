@@ -89,9 +89,9 @@ class CI_Model {
 		$this->db->where($tabla_id,$id);
 		$this->db->update($tabla);
 	}
-	function eliminar($tabla,$tabla_id,$id){
+	public function eliminar($tabla,$tabla_id,$id){
 		$this->db->where($tabla_id,$id);
-		$this->db->$this->db->delete('Table');($tabla);
+		$this->db->delete($tabla);
 	}
 	function insertar($tabla,$data){
 		$this->db->insert($tabla,$data);

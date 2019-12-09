@@ -6,10 +6,11 @@ $this->load->view('plantilla/header');
 	<div class="row m-5">
 		<div class="col-sm-12 d-flex justify-content-center">
 			<h3 class="text-size-50">Registro Alumnos</h3>
+			{errors}
 		</div>
 	</div>
 	<?php
-	    echo form_open('registro/nuevoRegistro');
+	    echo form_open('registro/nuevoRegistroAlumno');
 	?>
 		<div class="container w-75">
 			<div class="row ml-5">
@@ -114,6 +115,7 @@ $this->load->view('plantilla/header');
 			</div>
 			<div class="row ml-5">
 				<div class="form-group col-sm-6">
+					<label for="dtfenac"><small>Fecha de Nacimiento</small></label>
 					<?php
 					$dtfenac = array(
 						'type' => 'date',
@@ -125,6 +127,7 @@ $this->load->view('plantilla/header');
 					echo form_input($dtfenac);
 					?>
 					<?php echo form_error('dtfenac'); ?>
+
 				</div>
 				<div class="form-group col-sm-6">
 					<?php

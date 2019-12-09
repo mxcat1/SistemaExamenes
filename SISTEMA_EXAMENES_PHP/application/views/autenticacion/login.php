@@ -13,7 +13,7 @@ $this->load->view('plantilla/header');
 		<div class="row d-flex justify-content-center">
 			<?php
 				$atributos=array('class'=>'d-flex flex-column align-items-center','id'=>'frmlogin');
-			    echo form_open('autenticacion/ingresar',$atributos);
+			    echo form_open('autenticacion/IncioSession',$atributos);
 			?>
 				<div class="form-group d-flex flex-column align-items-center">
 					<?php
@@ -28,9 +28,13 @@ $this->load->view('plantilla/header');
 					);
 	
 					echo form_input($data);
+
 					?>
 	
 				</div>
+				<?php
+				echo form_error('txtnomusu')
+				?>
 				<div class="form-group d-flex flex-column align-items-center">
 					<?php
 					echo form_label('Nombre de usuario','txtnomusu');
@@ -43,8 +47,12 @@ $this->load->view('plantilla/header');
 					);
 
 					echo form_password($contra);
+
 					?>
 				</div>
+				<?php
+				echo form_error('passcontraseña')
+				?>
 				<?php
 				$boton = array(
 					'value' => 'Ingresar',

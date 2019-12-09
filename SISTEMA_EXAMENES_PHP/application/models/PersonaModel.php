@@ -3,8 +3,8 @@
 
 class PersonaModel extends CI_Model
 {
-	private $table='persona';
-	private $idtable='PersonaCodigo';
+	public $table='persona';
+	public $idtable='PersonaCodigo';
 	public function __construct()
 	{
 		parent::__construct();

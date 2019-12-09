@@ -12,16 +12,22 @@ class registro extends CI_Controller
 		$this->load->model('PaicesModel');
 		$this->load->model('AlumnoModel');
 		$this->load->model('PersonaModel');
+		$this->load->model('AuntenticacionModel');
 
 		$this->form_validation->set_error_delimiters('<small class="text-danger">','</small>');
 	}
 
-	public function registroVista(){
+	public function index(){
 		$data['errors']='';
 		$data['paices']=$this->PaicesModel->find_paices();
 		$this->parser->parse('registro/nuevoregistro',$data);
 	}
-	public function nuevoRegistro(){
+	public function registroVista($errores=''){
+		$data['errors']=$errores;
+		$data['paices']=$this->PaicesModel->find_paices();
+		$this->parser->parse('registro/nuevoregistro',$data);
+	}
+	public function nuevoRegistroAlumno(){
 
 		$this->form_validation->set_rules('txtdni', 'DNI', 'numeric|required|min_length[8]|max_length[8]',array(
 			'required'=>'El campo %s es requerido obligatoriamente',
@@ -63,36 +69,44 @@ class registro extends CI_Controller
 		));
 
 
-		$datosautenticacion=array(
-			'Contrato'=>null,
-			'AutenticacionNombreUsuario'=>$this->input->post('txtnomusuario'),
-			'AutenticacionContrasena'=>$this->input->post('txtpass')
-		);
-		$datosalumno=array(
-			'AlumnoCodigo'=>$this->input->post('txtdni').'EA',
-			'PersonaAlumno'=>$this->input->post('txtdni').'EP',
-		);
-		$datosPersona=array(
-			'PersonaCodigo'=>$this->input->post('txtdni').'EP',
-			'PersonaNombre'=>$this->input->post('txtnombre'),
-			'PersonaApellido'=>$this->input->post('txtapellido'),
-			'PersonaCorreo'=>$this->input->post('txtcorreo'),
-			'PersonaSexo'=>(($this->input->post('grbsexo')) == 'Masculino'?false :true),
-			'PersonaPais'=>$this->input->post('cbpais'),
-			'PersonaFechaNacimiento'=>$this->input->post('dtfenac'),
-		);
 		if ($this->form_validation->run() == FALSE) {
 			# code...
 			$this->registroVista();
 		} else {
 			# code...
-			echo 'Correcto';
-			echo $this->PersonaModel->RegistrarPersona($datosPersona);
-		}
-//		var_dump($datosPersona);
+			$datosautenticacion=array(
+				'Contrato'=>null,
+				'AutenticacionNombreUsuario'=>$this->input->post('txtnomusuario'),
+				'AutenticacionContrasena'=>$this->input->post('txtpass')
+			);
+			$cuenta=$this->AuntenticacionModel->RegistrarAuntenticacion($datosautenticacion);
 
-//		echo $this->PersonaModel->RegistrarPersona($datosPersona);
-		var_dump($datosalumno,$datosPersona,$datosautenticacion);
+			if ($cuenta){
+				//Nota: Para mas adelante crear
+				// una validacion del codigo de la persona
+				// y el codigo del alumno para mas seguridad
+				$datosPersona=array(
+					'PersonaCodigo'=>$this->input->post('txtdni').'EP',
+					'PersonaNombre'=>$this->input->post('txtnombre'),
+					'PersonaApellido'=>$this->input->post('txtapellido'),
+					'PersonaCorreo'=>$this->input->post('txtcorreo'),
+					'PersonaSexo'=>(($this->input->post('grbsexo')) == 'Masculino'?false :true),
+					'PersonaPais'=>$this->input->post('cbpais'),
+					'PersonaAutenticacion'=>$cuenta,
+					'PersonaFechaNacimiento'=>$this->input->post('dtfenac'),
+				);
+				$datosalumno=array(
+					'AlumnoCodigo'=>$this->input->post('txtdni').'EA',
+					'PersonaAlumno'=>$this->input->post('txtdni').'EP',
+				);
+				$this->PersonaModel->RegistrarPersona($datosPersona);
+				$this->AlumnoModel->RegistrarAlumno($datosalumno);
+				$this->registroVista('Registro Sadisfactorio');
+			}else{
+				$this->registroVista('Error en colocar El nombre de usuario o contraseña');
+			}
+
+		}
 	}
 
 }

@@ -4,7 +4,8 @@
 class AuntenticacionModel extends CI_Model
 {
 
-	private $table='autenticacion';
+	public $table='autenticacion';
+	public $idtable='AutenticacionCodigo';
 	public function __construct()
 	{
 		parent::__construct();
@@ -20,4 +21,5 @@ class AuntenticacionModel extends CI_Model
 		$this->db->insert($this->table,$datosauten);
 		return $this->db->insert_id();
 	}
+
 }
