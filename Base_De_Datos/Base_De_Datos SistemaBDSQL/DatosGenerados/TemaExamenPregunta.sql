@@ -1,0 +1,10 @@
+insert into TemaExamenPregunta (idTemaExamenPregunta, TemaPregunta) values (1, 'Herencia');
+insert into TemaExamenPregunta (idTemaExamenPregunta, TemaPregunta) values (2, 'Algoritmos');
+insert into TemaExamenPregunta (idTemaExamenPregunta, TemaPregunta) values (3, 'Ciencia de datos');
+insert into TemaExamenPregunta (idTemaExamenPregunta, TemaPregunta) values (4, 'Comunicacion con le cliente');
+insert into TemaExamenPregunta (idTemaExamenPregunta, TemaPregunta) values (5, 'data con el cliente');
+insert into TemaExamenPregunta (idTemaExamenPregunta, TemaPregunta) values (6, 'recoleccion de datos');
+insert into TemaExamenPregunta (idTemaExamenPregunta, TemaPregunta) values (7, 'interpretacion');
+insert into TemaExamenPregunta (idTemaExamenPregunta, TemaPregunta) values (8, 'sociologia neutral');
+insert into TemaExamenPregunta (idTemaExamenPregunta, TemaPregunta) values (9, 'medio ambiente sostenible');
+insert into TemaExamenPregunta (idTemaExamenPregunta, TemaPregunta) values (10, 'colaboracion grupal');

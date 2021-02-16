@@ -1,0 +1,10 @@
+INSERT INTO sistema_examenes.temaexamenpregunta (idTemaExamenPregunta, TemaPregunta) VALUES (1, 'Herencia');
+INSERT INTO sistema_examenes.temaexamenpregunta (idTemaExamenPregunta, TemaPregunta) VALUES (2, 'Algoritmos');
+INSERT INTO sistema_examenes.temaexamenpregunta (idTemaExamenPregunta, TemaPregunta) VALUES (3, 'Ciencia de datos');
+INSERT INTO sistema_examenes.temaexamenpregunta (idTemaExamenPregunta, TemaPregunta) VALUES (4, 'Comunicacion con le cliente');
+INSERT INTO sistema_examenes.temaexamenpregunta (idTemaExamenPregunta, TemaPregunta) VALUES (5, 'data con el cliente');
+INSERT INTO sistema_examenes.temaexamenpregunta (idTemaExamenPregunta, TemaPregunta) VALUES (6, 'recoleccion de datos');
+INSERT INTO sistema_examenes.temaexamenpregunta (idTemaExamenPregunta, TemaPregunta) VALUES (7, 'interpretacion');
+INSERT INTO sistema_examenes.temaexamenpregunta (idTemaExamenPregunta, TemaPregunta) VALUES (8, 'sociologia neutral');
+INSERT INTO sistema_examenes.temaexamenpregunta (idTemaExamenPregunta, TemaPregunta) VALUES (9, 'medio ambiente sostenible');
+INSERT INTO sistema_examenes.temaexamenpregunta (idTemaExamenPregunta, TemaPregunta) VALUES (10, 'colaboracion grupal');
